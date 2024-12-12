@@ -9,8 +9,6 @@ import java.util.Map;
  */
 public class Enseignant extends Personne {
 
-    // TODO : rajouter les autres méthodes présentes dans le diagramme UML
-
     Map<UE, ServicePrevu> coursEnseignant;
 
     public Enseignant(String nom, String email) {
@@ -18,14 +16,7 @@ public class Enseignant extends Personne {
         this.coursEnseignant = new HashMap<UE, ServicePrevu>();
     }
 
-    /**
-     * Calcule le nombre total d'heures prévues pour cet enseignant en "heures équivalent TD" Pour le calcul : 1 heure
-     * de cours magistral vaut 1,5 h "équivalent TD" 1 heure de TD vaut 1h "équivalent TD" 1 heure de TP vaut 0,75h
-     * "équivalent TD"
-     *
-     * @return le nombre total d'heures "équivalent TD" prévues pour cet enseignant, arrondi à l'entier le plus proche
-     *
-     */
+
     public int heuresPrevues() {
         double total =0;
         for (ServicePrevu service : coursEnseignant.values()) {
@@ -61,6 +52,20 @@ public class Enseignant extends Personne {
         }
 
 
+    }
+
+    //TODO ajout méthode du diagramme UML
+
+    public boolean enSousService(){
+        return false;
+    }
+
+    public void ajouterIntervention( Intervention inter ){
+
+    }
+
+    public int resteAPlanifier(UE ue, TypeIntervention type){
+        return 0;
     }
 
 }
